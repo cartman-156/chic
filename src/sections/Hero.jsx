@@ -36,7 +36,7 @@ export default function Hero() {
           </span>
           <div className="h-px w-20 bg-luxury-gold mx-auto my-6" />
           <p className="text-lg md:text-2xl font-serif italic font-light text-luxury-black/80 max-w-xl mx-auto">
-            Handcrafted frocks, bespoke jewellery, and elegant gift accessories.
+            Thoughtfully crafted pieces with timeless appeal.
           </p>
         </motion.div>
 

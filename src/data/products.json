@@ -10,6 +10,13 @@
       "/images/kids-frocks/kf001-2.webp",
       "/images/kids-frocks/kf001-3.webp"
     ],
+    "details": [
+      "Bespoke Handcrafted Design",
+      "Premium Organic Cotton Fabric",
+      "Hand-Embroidered Pastel Blooms",
+      "Custom Measurements & Styling Available",
+      "Available in Ages 2–12 Years"
+    ],
     "customizable": true,
     "featured": true
   },
@@ -22,6 +29,13 @@
     "images": [
       "/images/teen-frocks/tf001-1.webp",
       "/images/teen-frocks/tf001-2.webp"
+    ],
+    "details": [
+      "Luxurious Silk Blend Fabric",
+      "Flowy Feminine Silhouette",
+      "Custom Length & Fit Available",
+      "Champagne & Ivory Tone Palette",
+      "Suitable for Formal & Semi-Formal Occasions"
     ],
     "customizable": true,
     "featured": true
@@ -37,6 +51,13 @@
       "/images/jewellery/jw001-2.webp",
       "/images/jewellery/jw001-3.webp"
     ],
+    "details": [
+      "Natural Baroque Pearl Setting",
+      "Gold-Plated Brass Hardware",
+      "Adjustable Clasp Closure",
+      "Hypoallergenic Materials",
+      "Handcrafted by Skilled Artisans"
+    ],
     "customizable": false,
     "featured": true
   },
@@ -50,6 +71,13 @@
       "/images/gift-envelopes/ge001-1.webp",
       "/images/gift-envelopes/ge001-2.webp"
     ],
+    "details": [
+      "300 GSM Luxury Ivory Paper Stock",
+      "Gold Foil Filigree Print",
+      "Satin Ribbon Closure",
+      "Custom Name & Message Printing Available",
+      "Sold in Sets of 5"
+    ],
     "customizable": true,
     "featured": false
   },
@@ -62,6 +90,13 @@
     "images": [
       "/images/kids-envelopes/ke001-1.webp",
       "/images/kids-envelopes/ke001-2.webp"
+    ],
+    "details": [
+      "Textured Pastel Cardstock",
+      "Hand-Illustrated Forest Creature Motifs",
+      "Child-Safe Ink & Materials",
+      "Fits Standard Currency & Gift Cards",
+      "Sold in Sets of 6"
     ],
     "customizable": false,
     "featured": false

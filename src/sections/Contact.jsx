@@ -61,7 +61,7 @@ export default function Contact({ settings }) {
                   Studio Support
                 </h4>
                 <p className="text-xs font-light text-luxury-muted mt-1">
-                  Monday–Saturday, 10 AM–8 PM
+                  Monday–Saturday, 10 AM–5 PM
                 </p>
               </div>
             </div>
@@ -189,7 +189,7 @@ export default function Contact({ settings }) {
   //               <Clock className="w-5 h-5 text-luxury-gold stroke-[1.25] mt-0.5" />
   //               <div>
   //                 <h4 className="text-xs tracking-widest font-semibold uppercase text-luxury-black">Studio Support</h4>
-  //                 <p className="text-xs font-light text-luxury-muted mt-1">Monday–Saturday, 10 AM–8 PM</p>
+  //                 <p className="text-xs font-light text-luxury-muted mt-1">Monday–Saturday, 10 AM–5 PM</p>
   //               </div>
   //             </div>
 

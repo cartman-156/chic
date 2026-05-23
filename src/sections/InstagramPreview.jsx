@@ -29,7 +29,7 @@ export default function InstagramPreview({ settings }) {
             className="inline-flex items-center space-x-2 text-xs tracking-widest uppercase font-light text-luxury-gold hover:text-luxury-black transition-colors duration-300"
           >
             <Instagram className="w-3.5 h-3.5 stroke-[1.5]" />
-            <span>@chic.stylishlysimple</span>
+            <span>@awatimanasi</span>
           </a>
         </div>
 
@@ -54,7 +54,7 @@ export default function InstagramPreview({ settings }) {
               {/* Overlay */}
               <div className="absolute inset-0 bg-luxury-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                 <span className="text-white text-xs tracking-widest uppercase font-light border border-white/40 px-6 py-3 backdrop-blur-sm">
-                  View Story
+                  Visit Instagram
                 </span>
               </div>
             </a>

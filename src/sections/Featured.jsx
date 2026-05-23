@@ -27,9 +27,7 @@ export default function Featured({ products, settings }) {
           </div>
 
           <p className="text-sm font-light text-luxury-muted leading-relaxed">
-            Every creation in our collection is meticulously handcrafted by skilled artisans.
-            We source only the finest fabrics, authentic pearls, and premium stationery paper
-            to ensure your keepsake stands the test of time.
+            Every piece in our collection is thoughtfully crafted with an emphasis on quality, detail, and timeless design — created to be cherished for years to come.
           </p>
 
           <div className="pt-4 border-t border-luxury-champagne/60">
