@@ -1,0 +1,3 @@
+Luxury boutique fashion editorial scene featuring handcrafted frocks, jewellery and elegant gift accessories arranged artistically in a premium boutique environment, cinematic composition, warm ivory and champagne palette, soft natural window lighting, elegant feminine atmosphere, shallow depth of field, luxury Instagram boutique aesthetic, editorial fashion storytelling, sophisticated handcrafted branding mood, premium minimal styling, 16:9 cinematic composition
+
+hero-editorial-1.webp

@@ -1,0 +1,4 @@
+Stylish elegant teenage party frock in modern boutique editorial style, premium handcrafted fashion piece, sophisticated feminine silhouette, soft beige and ivory tones, luxury fashion photography, realistic fabric folds, cinematic boutique atmosphere, shallow depth of field, minimal premium composition, luxury boutique editorial photography, soft natural lighting, premium handcrafted aesthetic, cinematic composition, elegant neutral luxury palette, realistic fabric textures, clean premium background, Instagram luxury boutique style, soft shadows, visually rich but minimal, realistic materials, premium product focus, 4:5 portrait composition
+
+tf001-1.webp
+tf001-2.webp
