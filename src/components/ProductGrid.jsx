@@ -1,34 +1,64 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { Search } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 import ProductCard from './ProductCard';
 
 export default function ProductGrid({ products, settings }) {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+  const [mountedItems, setMountedItems] = useState({});
 
   const categories = useMemo(() => {
-    const list = new Set(products.map(p => p.category));
-    return ['All', ...Array.from(list)];
+    const set = new Set(products.map((p) => p.category));
+    return ['All', ...Array.from(set)];
   }, [products]);
 
   const filteredProducts = useMemo(() => {
+    const q = searchQuery.toLowerCase();
+
     return products.filter((product) => {
-      const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
-      const matchesSearch = product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                            product.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                            (product.description && product.description.toLowerCase().includes(searchQuery.toLowerCase()));
+      const matchesCategory =
+        selectedCategory === 'All' ||
+        product.category === selectedCategory;
+
+      const matchesSearch =
+        product.title.toLowerCase().includes(q) ||
+        product.category.toLowerCase().includes(q) ||
+        (product.description || '').toLowerCase().includes(q);
+
       return matchesCategory && matchesSearch;
     });
   }, [products, selectedCategory, searchQuery]);
 
+  // ✅ FIX: stable per-product animation trigger
+  useEffect(() => {
+    const newState = {};
+
+    filteredProducts.forEach((product, i) => {
+      newState[product.id] = false;
+
+      setTimeout(() => {
+        setMountedItems((prev) => ({
+          ...prev,
+          [product.id]: true,
+        }));
+      }, i * 50);
+    });
+
+    setMountedItems(newState);
+  }, [selectedCategory, searchQuery]);
+
+  const resetFilters = () => {
+    setSelectedCategory('All');
+    setSearchQuery('');
+  };
+
   return (
     <section id="showcase" className="py-24 bg-luxury-ivory">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        
-        {/* Editorial Section Header */}
+
+        {/* HEADER */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 space-y-6 md:space-y-0">
-          <div className="space-y-2">
+          <div>
             <span className="text-[10px] tracking-widest text-luxury-muted uppercase font-light">
               Bespoke Gallery
             </span>
@@ -37,7 +67,6 @@ export default function ProductGrid({ products, settings }) {
             </h2>
           </div>
 
-          {/* Minimal Search Bar */}
           <div className="relative w-full md:w-80">
             <input
               type="text"
@@ -50,8 +79,8 @@ export default function ProductGrid({ products, settings }) {
           </div>
         </div>
 
-        {/* Category Filters Bar */}
-        <div className="flex overflow-x-auto space-x-8 pb-4 mb-12 scrollbar-none -mx-6 px-6 md:mx-0 md:px-0 border-b border-luxury-champagne/20">
+        {/* FILTERS */}
+        <div className="flex overflow-x-auto space-x-8 pb-4 mb-12 scrollbar-none border-b border-luxury-champagne/20">
           {categories.map((category) => (
             <button
               key={category}
@@ -67,35 +96,38 @@ export default function ProductGrid({ products, settings }) {
           ))}
         </div>
 
-        {/* Masonry / Editorial Product Grid */}
-        <motion.div 
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredProducts.map((product) => (
-              <motion.div
+        {/* GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8">
+          {filteredProducts.map((product) => {
+            const isVisible = mountedItems[product.id];
+
+            return (
+              <div
                 key={product.id}
-                layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+                className={`
+                  transition-all duration-700 ease-out
+                  will-change-transform
+                  ${isVisible
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-6'
+                  }
+                `}
               >
                 <ProductCard product={product} settings={settings} />
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+              </div>
+            );
+          })}
+        </div>
 
-        {/* Empty State */}
+        {/* EMPTY STATE */}
         {filteredProducts.length === 0 && (
           <div className="text-center py-20">
             <p className="text-lg font-serif font-light text-luxury-muted">
               No creations found matching your request.
             </p>
+
             <button
-              onClick={() => { setSelectedCategory('All'); setSearchQuery(''); }}
+              onClick={resetFilters}
               className="mt-4 text-xs tracking-widest uppercase font-light text-luxury-gold hover:text-luxury-black transition-colors"
             >
               Reset Filters
