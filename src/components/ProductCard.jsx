@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
@@ -6,31 +6,29 @@ export default function ProductCard({ product, settings }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
-  // Desktop zoom
-  const [zoomPos, setZoomPos] = useState({ x: 50, y: 50 });
-  const [isZooming, setIsZooming] = useState(false);
-
-  // Mobile zoom
-  const [mobileZoom, setMobileZoom] = useState(false);
-
-  const imageRef = useRef(null);
-  const rafRef = useRef(null);
-  const latestPos = useRef({ x: 50, y: 50 });
-
+  // NEXT IMAGE
   const nextImage = (e) => {
     e.stopPropagation();
+
     if (product.images?.length > 0) {
-      setActiveImageIndex((prev) => (prev + 1) % product.images.length);
+      setActiveImageIndex((prev) =>
+        (prev + 1) % product.images.length
+      );
     }
   };
 
+  // PREVIOUS IMAGE
   const prevImage = (e) => {
     e.stopPropagation();
+
     if (product.images?.length > 0) {
-      setActiveImageIndex((prev) => (prev - 1 + product.images.length) % product.images.length);
+      setActiveImageIndex((prev) =>
+        (prev - 1 + product.images.length) % product.images.length
+      );
     }
   };
 
+  // WHATSAPP LINK
   const formatWhatsAppLink = () => {
     const number = settings?.whatsappNumber || '919999999999';
 
@@ -43,48 +41,35 @@ Customization: ${product.customizable ? 'Yes' : 'No'}`;
     return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
   };
 
+  // IMAGE HELPER
   const getProductImage = (index) => {
-    if (product.images?.length > 0) return product.images[index];
+    if (product.images?.length > 0) {
+      const imagePath = product.images[index];
+
+      return `${import.meta.env.BASE_URL}${imagePath.replace(/^\/+/, '')}`;
+    }
+
     return 'https://via.placeholder.com/600x750.png?text=Image+Coming+Soon';
   };
-
-  // 🔥 SMOOTH APPLE-STYLE MOUSE TRACKING
-  const handleMouseMove = (e) => {
-    const rect = imageRef.current.getBoundingClientRect();
-
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-
-    latestPos.current = { x, y };
-
-    if (!rafRef.current) {
-      rafRef.current = requestAnimationFrame(() => {
-        setZoomPos(latestPos.current);
-        rafRef.current = null;
-      });
-    }
-  };
-
-  useEffect(() => {
-    return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    };
-  }, []);
 
   return (
     <>
       {/* PRODUCT CARD */}
       <motion.div
-        layoutId={`card-${product.id}`}
+        layoutId={`card-${String(product.id)}`}
         onClick={() => setIsExpanded(true)}
         className="group cursor-pointer bg-[#FCFBF9] text-left"
-        whileHover={{ y: -8 }}
+        whileHover={{ translateY: -8 }}
+        transition={{ duration: 0.25 }}
       >
+
+        {/* CARD IMAGE */}
         <div className="aspect-[4/5] overflow-hidden bg-luxury-champagne relative mb-4">
+
           <img
             src={getProductImage(0)}
             alt={product.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
           />
 
           {product.customizable && (
@@ -92,24 +77,32 @@ Customization: ${product.customizable ? 'Yes' : 'No'}`;
               Customizable
             </span>
           )}
+
         </div>
 
+        {/* CARD CONTENT */}
         <div className="space-y-1">
+
           <p className="text-[10px] tracking-widest uppercase text-luxury-muted">
             {product.category}
           </p>
 
           <div className="flex justify-between items-baseline">
+
             <h3 className="text-lg font-serif font-light group-hover:text-luxury-gold transition-colors">
               {product.title}
             </h3>
-            <p className="text-sm font-light">{product.price}</p>
+
+            <p className="text-sm font-light">
+              {product.price}
+            </p>
+
           </div>
         </div>
       </motion.div>
 
       {/* MODAL */}
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {isExpanded && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-3 md:p-6">
 
@@ -118,106 +111,73 @@ Customization: ${product.customizable ? 'Yes' : 'No'}`;
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => {
-                setIsExpanded(false);
-                setMobileZoom(false);
-              }}
-              className="absolute inset-0 bg-black/60 backdrop-blur-md"
+              transition={{ duration: 0.25 }}
+              onClick={() => setIsExpanded(false)}
+              className="fixed inset-0 bg-black/60 backdrop-blur-md"
             />
 
-            {/* MODAL */}
+            {/* MODAL CONTAINER */}
             <motion.div
-              layoutId={`card-${product.id}`}
-              className="relative w-full max-w-5xl bg-luxury-ivory shadow-2xl flex flex-col md:flex-row z-10 max-h-[90vh] overflow-hidden"
+              layoutId={`card-${String(product.id)}`}
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: 0.25 }}
+              className="relative w-full max-w-5xl bg-luxury-ivory shadow-2xl flex flex-col md:flex-row z-10 max-h-[90vh] overflow-hidden rounded-sm"
             >
 
-              {/* CLOSE */}
+              {/* CLOSE BUTTON */}
               <button
                 onClick={() => setIsExpanded(false)}
-                className="absolute top-4 right-4 z-20 bg-black text-white p-2"
+                className="absolute top-4 right-4 z-30 bg-black text-white p-2 hover:bg-black/80 transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
 
               {/* IMAGE SECTION */}
-              <div
-                ref={imageRef}
-                className="w-full md:w-1/2 aspect-[4/5] relative overflow-hidden bg-black"
-                onMouseMove={!mobileZoom ? handleMouseMove : undefined}
-                onMouseEnter={() => setIsZooming(true)}
-                onMouseLeave={() => setIsZooming(false)}
-                onClick={() => {
-                  if (window.innerWidth < 768) {
-                    setMobileZoom(true);
-                  }
-                }}
-              >
+              <div className="w-full md:w-1/2 aspect-[4/5] relative overflow-hidden bg-black">
+
+                {/* MAIN IMAGE */}
                 <img
                   src={getProductImage(activeImageIndex)}
                   alt={product.title}
-                  className={`w-full h-full object-cover transition-transform duration-300 ${
-                    mobileZoom ? 'scale-150 cursor-grab' : ''
-                  }`}
-                  style={
-                    !mobileZoom
-                      ? { transformOrigin: `${zoomPos.x}% ${zoomPos.y}%` }
-                      : {}
-                  }
+                  className="w-full h-full object-cover transition-opacity duration-300"
                 />
 
-                {/* DESKTOP APPLE-LIKE LENS */}
-                {!mobileZoom && isZooming && (
-                  <div
-                    className="absolute pointer-events-none w-44 h-44 rounded-full border border-white/40 shadow-2xl backdrop-blur-sm"
-                    style={{
-                      top: `${zoomPos.y}%`,
-                      left: `${zoomPos.x}%`,
-                      transform: 'translate(-50%, -50%)',
-                      backgroundImage: `url(${getProductImage(activeImageIndex)})`,
-                      backgroundRepeat: 'no-repeat',
-                      backgroundSize: '260%',
-                      backgroundPosition: `${zoomPos.x}% ${zoomPos.y}%`
-                    }}
-                  />
-                )}
-
-                {/* MOBILE CLOSE ZOOM */}
-                {mobileZoom && (
+                {/* LEFT ARROW */}
+                {product.images?.length > 1 && (
                   <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setMobileZoom(false);
-                    }}
-                    className="absolute top-4 left-4 bg-white text-black px-3 py-1 text-xs"
+                    onClick={prevImage}
+                    className="absolute left-3 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white p-2 transition-colors"
                   >
-                    Exit Zoom
+                    <ChevronLeft className="w-5 h-5" />
                   </button>
                 )}
 
-                {/* NAV ARROWS */}
+                {/* RIGHT ARROW */}
                 {product.images?.length > 1 && (
-                  <>
-                    <button
-                      onClick={prevImage}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 p-2"
-                    >
-                      <ChevronLeft className="w-5 h-5" />
-                    </button>
-
-                    <button
-                      onClick={nextImage}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 p-2"
-                    >
-                      <ChevronRight className="w-5 h-5" />
-                    </button>
-                  </>
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white p-2 transition-colors"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
                 )}
+
+                {/* IMAGE COUNTER */}
+                {product.images?.length > 1 && (
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white text-xs px-3 py-1 rounded-full backdrop-blur-sm">
+                    {activeImageIndex + 1} / {product.images.length}
+                  </div>
+                )}
+
               </div>
 
-              {/* DETAILS */}
+              {/* DETAILS SECTION */}
               <div className="w-full md:w-1/2 p-6 md:p-12 overflow-y-auto space-y-6">
 
                 <div>
+
                   <span className="text-[10px] uppercase tracking-widest text-gray-500">
                     {product.category}
                   </span>
@@ -226,7 +186,10 @@ Customization: ${product.customizable ? 'Yes' : 'No'}`;
                     {product.title}
                   </h2>
 
-                  <p className="text-lg mt-2">{product.price}</p>
+                  <p className="text-lg mt-2">
+                    {product.price}
+                  </p>
+
                 </div>
 
                 <p className="text-sm text-gray-600 leading-relaxed">
@@ -236,16 +199,19 @@ Customization: ${product.customizable ? 'Yes' : 'No'}`;
                 {product.details?.length > 0 && (
                   <ul className="space-y-2 text-xs text-gray-600 list-disc list-inside">
                     {product.details.map((d, i) => (
-                      <li key={i}>{d}</li>
+                      <li key={i}>
+                        {d}
+                      </li>
                     ))}
                   </ul>
                 )}
 
+                {/* WHATSAPP BUTTON */}
                 <a
                   href={formatWhatsAppLink()}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-center bg-black text-white py-4 text-xs uppercase tracking-widest"
+                  className="block text-center bg-black text-white py-4 text-xs uppercase tracking-widest hover:bg-black/90 transition-colors"
                 >
                   Inquire via WhatsApp
                 </a>
