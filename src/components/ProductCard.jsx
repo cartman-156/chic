@@ -1,17 +1,10 @@
-import React, { useState, useRef } from 'react';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 export default function ProductCard({ product, settings }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
-
-  // ✅ Scroll visibility trigger (fixes flicker + early paint)
-  const ref = useRef(null);
-  const isInView = useInView(ref, {
-    once: true,
-    margin: '-80px 0px'
-  });
 
   const nextImage = (e) => {
     e.stopPropagation();
@@ -53,23 +46,10 @@ Price: ${product.price}`;
     <>
       {/* CARD */}
       <motion.div
-        ref={ref}
         onClick={() => setIsExpanded(true)}
         className="group cursor-pointer bg-[#FCFBF9] text-left"
-
-        initial={{ opacity: 0, y: 28 }}
-        animate={
-          isInView
-            ? { opacity: 1, y: 0 }
-            : { opacity: 0, y: 28 }
-        }
-
-        transition={{
-          duration: 0.65,
-          ease: [0.16, 1, 0.3, 1]
-        }}
-
         whileHover={{ y: -6 }}
+        transition={{ duration: 0.25 }}
       >
         <div className="aspect-[4/5] overflow-hidden bg-luxury-champagne relative mb-4">
           <img
@@ -78,32 +58,34 @@ Price: ${product.price}`;
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
           />
 
-          {/* BADGE */}
-          <AnimatePresence mode="wait">
-            {!product.inStock ? (
-              <motion.span
-                key="soldout"
-                initial={{ opacity: 0, scale: 0.7, y: -14 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.4 }}
-                className="absolute top-4 left-4 bg-[#B89B5E] text-white text-[9px] uppercase px-3 py-1 border z-10 shadow-md"
-              >
-                Sold Out
-              </motion.span>
-            ) : product.customizable ? (
-              <motion.span
-                key="customizable"
-                initial={{ opacity: 0, scale: 0.8, y: -12 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.4 }}
-                className="absolute top-4 left-4 bg-luxury-ivory/95 text-luxury-black text-[9px] uppercase px-3 py-1 border z-10"
-              >
-                Customizable
-              </motion.span>
-            ) : null}
-          </AnimatePresence>
+          {/* ✅ MOBILE-SAFE BADGE SYSTEM */}
+          <div className="absolute top-4 left-4 z-10">
+            <AnimatePresence mode="wait" initial={false}>
+              {!product.inStock ? (
+                <motion.span
+                  key="soldout"
+                  initial={{ opacity: 0, scale: 0.85 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.85 }}
+                  transition={{ duration: 0.25 }}
+                  className="inline-block bg-[#B89B5E] text-white text-[9px] uppercase px-3 py-1 border shadow-md"
+                >
+                  Sold Out
+                </motion.span>
+              ) : product.customizable ? (
+                <motion.span
+                  key="custom"
+                  initial={{ opacity: 0, scale: 0.85 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.85 }}
+                  transition={{ duration: 0.25 }}
+                  className="inline-block bg-luxury-ivory/95 text-luxury-black text-[9px] uppercase px-3 py-1 border"
+                >
+                  Customizable
+                </motion.span>
+              ) : null}
+            </AnimatePresence>
+          </div>
         </div>
 
         <div className="space-y-1">
