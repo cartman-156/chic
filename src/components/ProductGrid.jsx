@@ -59,7 +59,7 @@ export default function ProductGrid({ products, settings }) {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 space-y-6 md:space-y-0">
           <div>
             <span className="text-[10px] tracking-widest text-luxury-muted uppercase font-light">
-              Bespoke Gallery
+              Curated Collection
             </span>
             <h2 className="text-4xl md:text-5xl font-serif font-light text-luxury-black">
               Explore Our Creations

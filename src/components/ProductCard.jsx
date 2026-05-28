@@ -28,8 +28,7 @@ export default function ProductCard({ product, settings }) {
     const text = `Hello Chic, I'm interested in:
 Product: ${product.title}
 Code: ${product.id}
-Price: ${product.price}
-Customization: ${product.customizable ? 'Yes' : 'No'}`;
+Price: ${product.price}`;
 
     return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
   };
@@ -169,16 +168,14 @@ Customization: ${product.customizable ? 'Yes' : 'No'}`;
                   </ul>
                 )}
 
-                <a
-                  href={formatWhatsAppLink()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-center bg-black text-white py-4 text-xs uppercase tracking-widest"
+                <button
+                  onClick={() => window.open(formatWhatsAppLink(), '_blank')}
+                  className="w-full bg-black text-white py-4 px-6 md:px-10 text-xs uppercase tracking-widest box-border"
                 >
-                {product.inStock
-                  ? 'Inquire via WhatsApp'
-                  : 'Request a Similar Bespoke Creation'}
-                </a>
+                  {product.inStock
+                    ? 'Inquire via WhatsApp'
+                    : 'Request a Similar Creation'}
+                </button>
               </div>
             </motion.div>
           </div>
