@@ -64,6 +64,11 @@ Customization: ${product.customizable ? 'Yes' : 'No'}`;
               Customizable
             </span>
           )}
+          {!product.inStock && (
+            <span className="absolute top-12 left-4 bg-luxury-muted/90 text-[9px] uppercase px-3 py-1 border">
+              Sold Out
+            </span>
+          )}
         </div>
 
         <div className="space-y-1">
@@ -170,7 +175,9 @@ Customization: ${product.customizable ? 'Yes' : 'No'}`;
                   rel="noopener noreferrer"
                   className="block text-center bg-black text-white py-4 text-xs uppercase tracking-widest"
                 >
-                  Inquire via WhatsApp
+                {product.inStock
+                  ? 'Inquire via WhatsApp'
+                  : 'Request a Similar Bespoke Creation'}
                 </a>
               </div>
             </motion.div>

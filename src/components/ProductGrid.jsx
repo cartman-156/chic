@@ -29,7 +29,6 @@ export default function ProductGrid({ products, settings }) {
     });
   }, [products, selectedCategory, searchQuery]);
 
-  // ✅ FIX: stable per-product animation trigger
   useEffect(() => {
     const newState = {};
 
@@ -41,7 +40,7 @@ export default function ProductGrid({ products, settings }) {
           ...prev,
           [product.id]: true,
         }));
-      }, i * 50);
+      }, i * 40);
     });
 
     setMountedItems(newState);
@@ -105,12 +104,8 @@ export default function ProductGrid({ products, settings }) {
               <div
                 key={product.id}
                 className={`
-                  transition-all duration-700 ease-out
-                  will-change-transform
-                  ${isVisible
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-6'
-                  }
+                  transition-opacity duration-500 ease-out
+                  ${isVisible ? 'opacity-100' : 'opacity-0'}
                 `}
               >
                 <ProductCard product={product} settings={settings} />
