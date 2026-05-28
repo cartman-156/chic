@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useRef } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 export default function ProductCard({ product, settings }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  // ✅ Scroll visibility trigger (fixes flicker + early paint)
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    margin: '-80px 0px'
+  });
 
   const nextImage = (e) => {
     e.stopPropagation();
@@ -44,12 +51,25 @@ Price: ${product.price}`;
 
   return (
     <>
-      {/* CARD (NO layoutId) */}
+      {/* CARD */}
       <motion.div
+        ref={ref}
         onClick={() => setIsExpanded(true)}
         className="group cursor-pointer bg-[#FCFBF9] text-left"
+
+        initial={{ opacity: 0, y: 28 }}
+        animate={
+          isInView
+            ? { opacity: 1, y: 0 }
+            : { opacity: 0, y: 28 }
+        }
+
+        transition={{
+          duration: 0.65,
+          ease: [0.16, 1, 0.3, 1]
+        }}
+
         whileHover={{ y: -6 }}
-        transition={{ duration: 0.25 }}
       >
         <div className="aspect-[4/5] overflow-hidden bg-luxury-champagne relative mb-4">
           <img
@@ -58,16 +78,32 @@ Price: ${product.price}`;
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
           />
 
-          {product.customizable && (
-            <span className="absolute top-4 left-4 bg-luxury-ivory/90 text-[9px] uppercase px-3 py-1 border">
-              Customizable
-            </span>
-          )}
-          {!product.inStock && (
-            <span className="absolute top-12 left-4 bg-luxury-muted/90 text-[9px] uppercase px-3 py-1 border">
-              Sold Out
-            </span>
-          )}
+          {/* BADGE */}
+          <AnimatePresence mode="wait">
+            {!product.inStock ? (
+              <motion.span
+                key="soldout"
+                initial={{ opacity: 0, scale: 0.7, y: -14 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4 }}
+                className="absolute top-4 left-4 bg-[#B89B5E] text-white text-[9px] uppercase px-3 py-1 border z-10 shadow-md"
+              >
+                Sold Out
+              </motion.span>
+            ) : product.customizable ? (
+              <motion.span
+                key="customizable"
+                initial={{ opacity: 0, scale: 0.8, y: -12 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4 }}
+                className="absolute top-4 left-4 bg-luxury-ivory/95 text-luxury-black text-[9px] uppercase px-3 py-1 border z-10"
+              >
+                Customizable
+              </motion.span>
+            ) : null}
+          </AnimatePresence>
         </div>
 
         <div className="space-y-1">
@@ -84,22 +120,19 @@ Price: ${product.price}`;
         </div>
       </motion.div>
 
-      {/* MODAL (clean AnimatePresence) */}
+      {/* MODAL */}
       <AnimatePresence>
         {isExpanded && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-3 md:p-6">
 
-            {/* BACKDROP */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.25 }}
               onClick={() => setIsExpanded(false)}
               className="absolute inset-0 bg-black/60 backdrop-blur-md"
             />
 
-            {/* MODAL */}
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -107,7 +140,6 @@ Price: ${product.price}`;
               transition={{ duration: 0.25 }}
               className="relative w-full max-w-5xl bg-luxury-ivory shadow-2xl flex flex-col md:flex-row z-10 max-h-[90vh] overflow-hidden"
             >
-              {/* CLOSE */}
               <button
                 onClick={() => setIsExpanded(false)}
                 className="absolute top-4 right-4 z-30 bg-black text-white p-2"
@@ -115,7 +147,6 @@ Price: ${product.price}`;
                 <X className="w-5 h-5" />
               </button>
 
-              {/* IMAGE */}
               <div className="w-full md:w-1/2 aspect-[4/5] relative overflow-hidden bg-black">
                 <img
                   src={getProductImage(activeImageIndex)}
@@ -142,7 +173,6 @@ Price: ${product.price}`;
                 )}
               </div>
 
-              {/* DETAILS */}
               <div className="w-full md:w-1/2 p-6 md:p-12 overflow-y-auto space-y-6">
                 <div>
                   <span className="text-[10px] uppercase tracking-widest text-gray-500">
