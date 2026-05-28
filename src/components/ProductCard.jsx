@@ -1,10 +1,32 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 export default function ProductCard({ product, settings }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
+
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-80px' });
+
+  // Detect touch device (mobile safety layer)
+  useEffect(() => {
+    const touch = window.matchMedia('(hover: none)').matches;
+    setIsTouch(touch);
+  }, []);
+
+  // Auto image rotation (softened timing)
+  useEffect(() => {
+    if (!product.images || product.images.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setActiveImageIndex((prev) => (prev + 1) % product.images.length);
+    }, 4200); // softer pacing
+
+    return () => clearInterval(interval);
+  }, [product.images]);
 
   const nextImage = (e) => {
     e.stopPropagation();
@@ -42,67 +64,111 @@ Price: ${product.price}`;
     return 'https://via.placeholder.com/600x750.png?text=Image+Coming+Soon';
   };
 
+  const showOverlay = isTouch ? false : isHovered;
+
   return (
     <>
       {/* CARD */}
       <motion.div
+        ref={ref}
         onClick={() => setIsExpanded(true)}
-        className="group cursor-pointer bg-[#FCFBF9] text-left"
-        whileHover={{ y: -6 }}
-        transition={{ duration: 0.25 }}
+        onMouseEnter={() => !isTouch && setIsHovered(true)}
+        onMouseLeave={() => !isTouch && setIsHovered(false)}
+        className="group cursor-pointer"
+        initial={{ opacity: 0, y: 18 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{
+          duration: 0.8,
+          ease: [0.25, 1, 0.5, 1] // luxury easing
+        }}
       >
-        <div className="aspect-[4/5] overflow-hidden bg-luxury-champagne relative mb-4">
-          <img
-            src={getProductImage(0)}
+
+        {/* IMAGE */}
+        <div className="aspect-[4/5] overflow-hidden bg-[#F6F4EF] relative">
+
+          <motion.img
+            key={activeImageIndex}
+            src={getProductImage(activeImageIndex)}
             alt={product.title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            className="w-full h-full object-cover"
+            animate={{
+              scale: showOverlay ? 1.03 : 1
+            }}
+            transition={{
+              duration: 1.2,
+              ease: [0.25, 1, 0.5, 1]
+            }}
           />
 
-          {/* ✅ MOBILE-SAFE BADGE SYSTEM */}
-          <div className="absolute top-4 left-4 z-10">
-            <AnimatePresence mode="wait" initial={false}>
-              {!product.inStock ? (
-                <motion.span
-                  key="soldout"
-                  initial={{ opacity: 0, scale: 0.85 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.85 }}
-                  transition={{ duration: 0.25 }}
-                  className="inline-block bg-[#B89B5E] text-white text-[9px] uppercase px-3 py-1 border shadow-md"
-                >
-                  Sold Out
-                </motion.span>
-              ) : product.customizable ? (
-                <motion.span
-                  key="custom"
-                  initial={{ opacity: 0, scale: 0.85 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.85 }}
-                  transition={{ duration: 0.25 }}
-                  className="inline-block bg-luxury-ivory/95 text-luxury-black text-[9px] uppercase px-3 py-1 border"
-                >
-                  Customizable
-                </motion.span>
-              ) : null}
-            </AnimatePresence>
+          {/* BADGES */}
+          <div className="absolute top-3 left-3 flex gap-2">
+            {!product.inStock && (
+              <span className="text-[9px] tracking-widest uppercase px-2 py-1 bg-black/70 text-white backdrop-blur-sm">
+                Sold Out
+              </span>
+            )}
+
+            {product.customizable && product.inStock && (
+              <span className="text-[9px] tracking-widest uppercase px-2 py-1 bg-white/80 text-black/70 backdrop-blur-sm">
+                Custom
+              </span>
+            )}
           </div>
-        </div>
 
-        <div className="space-y-1">
-          <p className="text-[10px] tracking-widest uppercase text-luxury-muted">
-            {product.category}
-          </p>
+          {/* INDEX */}
+          {product.images?.length > 1 && (
+            <div className="absolute bottom-3 right-3 text-[9px] text-white/60 tracking-widest">
+              {activeImageIndex + 1}/{product.images.length}
+            </div>
+          )}
 
-          <div className="flex justify-between items-baseline">
-            <h3 className="text-lg font-serif font-light group-hover:text-luxury-gold transition-colors">
+          {/* TITLE OVERLAY (soft + mobile-safe behavior) */}
+          <motion.div
+            className="absolute inset-0 flex items-center justify-center bg-black/10"
+            initial={false}
+            animate={{
+              opacity: showOverlay ? 1 : 0
+            }}
+            transition={{
+              duration: 0.6,
+              ease: [0.25, 1, 0.5, 1]
+            }}
+          >
+            <h3 className="text-white text-sm tracking-wide font-light px-4 text-center">
               {product.title}
             </h3>
-            <p className="text-sm font-light">{product.price}</p>
-          </div>
+          </motion.div>
+
         </div>
+
+        {/* BASE INFO (never fully disappears on mobile) */}
+        <motion.div
+          className="mt-3 space-y-1"
+          animate={{
+            opacity: showOverlay ? 0.35 : 1
+          }}
+          transition={{
+            duration: 0.5,
+            ease: [0.25, 1, 0.5, 1]
+          }}
+        >
+          <div className="flex justify-between items-baseline">
+            <h3 className="text-sm font-light text-black/80">
+              {product.title}
+            </h3>
+            <span className="text-xs text-black/50">
+              {product.price}
+            </span>
+          </div>
+
+          <p className="text-[10px] tracking-widest uppercase text-black/40">
+            {product.category}
+          </p>
+        </motion.div>
+
       </motion.div>
 
-      {/* MODAL */}
+      {/* MODAL (unchanged but softened transitions) */}
       <AnimatePresence>
         {isExpanded && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-3 md:p-6">
@@ -112,83 +178,57 @@ Price: ${product.price}`;
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsExpanded(false)}
-              className="absolute inset-0 bg-black/60 backdrop-blur-md"
+              className="absolute inset-0 bg-black/60"
             />
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
+              initial={{ opacity: 0, scale: 0.985 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.96 }}
-              transition={{ duration: 0.25 }}
-              className="relative w-full max-w-5xl bg-luxury-ivory shadow-2xl flex flex-col md:flex-row z-10 max-h-[90vh] overflow-hidden"
+              exit={{ opacity: 0, scale: 0.985 }}
+              transition={{
+                duration: 0.6,
+                ease: [0.25, 1, 0.5, 1]
+              }}
+              className="relative w-full max-w-5xl bg-white flex flex-col md:flex-row overflow-hidden"
             >
+
               <button
                 onClick={() => setIsExpanded(false)}
-                className="absolute top-4 right-4 z-30 bg-black text-white p-2"
+                className="absolute top-4 right-4 z-10 text-black/60"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="w-full md:w-1/2 aspect-[4/5] relative overflow-hidden bg-black">
+              <div className="w-full md:w-1/2 aspect-[4/5] bg-[#F6F4EF] relative">
                 <img
                   src={getProductImage(activeImageIndex)}
-                  alt={product.title}
                   className="w-full h-full object-cover"
                 />
-
-                {product.images?.length > 1 && (
-                  <>
-                    <button
-                      onClick={prevImage}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 p-2"
-                    >
-                      <ChevronLeft className="w-5 h-5" />
-                    </button>
-
-                    <button
-                      onClick={nextImage}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 p-2"
-                    >
-                      <ChevronRight className="w-5 h-5" />
-                    </button>
-                  </>
-                )}
               </div>
 
-              <div className="w-full md:w-1/2 p-6 md:p-12 overflow-y-auto space-y-6">
+              <div className="w-full md:w-1/2 p-8 space-y-6">
+
                 <div>
-                  <span className="text-[10px] uppercase tracking-widest text-gray-500">
+                  <h2 className="text-xl font-light">{product.title}</h2>
+                  <p className="text-sm text-black/60 mt-1">{product.price}</p>
+                  <p className="text-[10px] tracking-widest uppercase text-black/40 mt-2">
                     {product.category}
-                  </span>
-
-                  <h2 className="text-3xl font-serif font-light">
-                    {product.title}
-                  </h2>
-
-                  <p className="text-lg mt-2">{product.price}</p>
+                  </p>
                 </div>
 
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-sm text-black/60 leading-relaxed">
                   {product.description}
                 </p>
 
-                {product.details?.length > 0 && (
-                  <ul className="space-y-2 text-xs text-gray-600 list-disc list-inside">
-                    {product.details.map((d, i) => (
-                      <li key={i}>{d}</li>
-                    ))}
-                  </ul>
-                )}
-
                 <button
                   onClick={() => window.open(formatWhatsAppLink(), '_blank')}
-                  className="w-full bg-black text-white py-4 px-6 md:px-10 text-xs uppercase tracking-widest box-border"
+                  className="w-full border border-black/10 py-3 text-xs uppercase tracking-widest hover:bg-black hover:text-white transition"
                 >
-                  {product.inStock
-                    ? 'Inquire via WhatsApp'
-                    : 'Request a Similar Creation'}
+                  Enquire
                 </button>
+
               </div>
+
             </motion.div>
           </div>
         )}
