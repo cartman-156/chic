@@ -1,24 +1,76 @@
 [
   {
     "id": "kf001",
-    "title": "Pastel Bloom Frock",
+    "title": "Vintage -inspired floral cotton frock",
     "category": "Kids Frocks",
-    "price": "₹2,499",
-    "description": "An elegant, lightweight frock made from premium organic cotton and featuring intricate hand-embroidered pastel blooms.",
+    "price": "₹ 999",
+    "description": "Brighten up your little one's wardrobe with this charming vintage-inspired floral cotton frock.",
     "images": [
       "/images/kids-frocks/kf001-1.webp",
       "/images/kids-frocks/kf001-2.webp"
     ],
     "details": [
-      "Signature Handcrafted Piece",
       "Premium Organic Cotton Fabric",
-      "Hand-Embroidered Pastel Blooms",
+      "Detailed yellow and green floral print pattern throughout",
       "Custom Measurements & Styling Available",
-      "Available in Ages 2–12 Years"
+      "Available in Ages 2–12 Years",
+      "Features a fitted bodice with gathered waist and ruffled hem",
+      "Functional back keyhole design with a single fabric-covered button closure ",
+      "Ideal for casual daywear,birthday parties or outdoor spring and summer events"
     ],
     "customizable": true,
     "inStock": true,
     "featured": true
+  },
+  {
+    "id": "kf002",
+    "title": "Charming Daisy Flutter-sleeve cotton frock",
+    "category": "Kids Frocks",
+    "price": "₹ 2,499",
+    "description": "Dress your little one in effortless charm and comfort with our Delightful Daisy Cotton Frock",
+    "images": [
+      "/images/kids-frocks/kf002-1.webp"
+    ],
+    "details": [
+      "Crafted from soft,lightweight,and skin-friendly fabric ideal for kids",
+      "Premium Organic Cotton Fabric",
+      "Covered in an all-over,intricate white daisy pattern arranged in elegant rows.",
+      "Sweet,ruffled cap sleeves add a playful,airy touch to the shoulders.",
+      "The back of the dress features a contrasting navy waistband that ties into a beautiful bow,allowing for an adjustable,snug fit around the waist.",
+      "Designed with a smooth,hidden zipper clousre down the back for hassle-free outfit changes",
+      "Custom Measurements & Styling Available",
+      "Available in Ages 2–12 Years"
+    ],
+    "styleTips": "Pair this adorable frock with white canvas sneakers or ballet flats for a casual look or dress it up with a matching hair bow and patent leather sandals for a special occasion.",
+    "customizable": true,
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "kf003",
+    "title": "Elegant Magenta Paisely frock with ruffled sleeves",
+    "category": "Kids Frocks",
+    "price": "₹ 2,499",
+    "description": "Dress your litle one in timeless elegnce with this intricate,traiditional paisely print frock",
+    "images": [
+      "/images/kids-frocks/kf003-1.webp",
+      "/images/kids-frocks/kf003-2.webp"
+    ],
+    "details": [
+      "Crafted from soft,breathable,and high-quality fabric ideal for kids",
+      "Features a stunning,detailed ethnic paisley and floral design in rich magenta and gold tones that exudes regal charm.",
+      "Delicate ruffled sleeves add a touch of whimsy and elegance to the silhouette",
+      "Includes a beautiful tie-back bow at the waist to ensure a perfect,snug fit.",
+      "Designed with a smooth,hidden zipper clousre down the back for hassle-free outfit changes",
+      "Adorable ruffled cap sleeves fir a stylish,airy look.",
+      "Custom Measurements & Styling Available",
+      "Available in Ages 2–12 Years",
+      "Ideal for casual daywear,birthday parties or outdoor spring and summer events"
+    ],
+    "styleTips": "Pairs beautifully with simple gold flats and a matching hair scrunchie for a complete,picture-perfect look.",
+    "customizable": true,
+    "inStock": true,
+    "featured": false
   },
   {
     "id": "tf001",
@@ -39,70 +91,543 @@
     ],
     "customizable": true,
     "inStock": false,
-    "featured": true
+    "featured": false
   },
   {
-    "id": "jw001",
-    "title": "Baroque Pearl Drop Choker",
-    "category": "Jewellery",
-    "price": "₹1,899",
-    "description": "Handcrafted choke necklace featuring natural baroque pearls and elegant gold-plated detailing, perfect for minimal luxury statements.",
+    "id": "kf004",
+    "title": "Enchantin Floral Cotton Frock",
+    "category": "Kids Frocks",
+    "price": "₹ 2,499",
+    "description": "Bring a splash of color to her wardrobe with this charming,lightweight cotton frock.",
     "images": [
-      "/images/jewellery/jw001-1.webp",
-      "/images/jewellery/jw001-2.webp",
-      "/images/jewellery/jw001-3.webp"
+      "/images/kids-frocks/kf004-1.webp"
     ],
     "details": [
-      "Natural Baroque Pearl Setting",
-      "Gold-Plated Brass Hardware",
-      "Adjustable Clasp Closure",
-      "Hypoallergenic Materials",
-      "Handcrafted by Skilled Artisans"
+      "Crafted from 100% breathable cotton,ensuring softness and comfort for  delicate skin.",
+      "Designed for comfort and style,this dress festures a vibrant floral print against a crisp whit background",
+      "Features a classic A-line silhouette with an elegant,contrasting deep red trim around the neckline.",
+      "The yoke includes soft,gathered pleats that provide a gentle flare .",
+      "Custom Measurements & Styling Available",
+      "Available in Ages 2–12 Years",
+      "Ideal for casual daywear,birthday parties or outdoor spring and summer events"
     ],
-    "customizable": false,
-    "inStock": false,
-    "featured": true
-  },
-  {
-    "id": "ge001",
-    "title": "Floral Filigree Shagun Envelope",
-    "category": "Gift Envelopes",
-    "price": "₹499",
-    "description": "Premium handcrafted gift envelopes with intricate gold foil filigree patterns on luxury ivory paper stock.",
-    "images": [
-      "/images/gift-envelopes/ge001-1.webp",
-      "/images/gift-envelopes/ge001-2.webp"
-    ],
-    "details": [
-      "300 GSM Luxury Ivory Paper Stock",
-      "Gold Foil Filigree Print",
-      "Satin Ribbon Closure",
-      "Custom Name & Message Printing Available",
-      "Sold in Sets of 5"
-    ],
+    "styleTips": "Pairs beautifully with white sneakers for playful daytime look or layer with a cardigan and flats for cooler,dressier ocassions.Accessorize with a matching headband to highlight the dress's colorful floral print.",
     "customizable": true,
     "inStock": true,
     "featured": false
   },
   {
-    "id": "ke001",
-    "title": "Whimsical Woodland Envelope",
-    "category": "Kids Envelopes",
-    "price": "₹399",
-    "description": "Delightful money/gift envelope set for kids featuring soft pastel illustrations of forest creatures on textured cardstock.",
+    "id": "kf005",
+    "title": "The 'Vintage Meadow' Cotton Frock",
+    "category": "Kids Frocks",
+    "price": "₹ 2,499",
+    "description": "Add a touch of vintage charm to your little one's wardrobe with this delightful cotton frock.",
     "images": [
-      "/images/kids-envelopes/ke001-1.webp",
-      "/images/kids-envelopes/ke001-2.webp"
+      "/images/kids-frocks/kf005-1.webp"
     ],
     "details": [
-      "Textured Pastel Cardstock",
-      "Hand-Illustrated Forest Creature Motifs",
-      "Child-Safe Ink & Materials",
-      "Fits Standard Currency & Gift Cards",
-      "Sold in Sets of 6"
+      "Crafted from soft and breathable cotton (as indicated by the 'Beige floral Swatch')",
+      "It features a scattering of delicate brown,cream,and lavender-grey floral motifs for a classic,wholesome look.",
+      "The bodice is highlighted by playful,layered flutter sleeves and tidy gathered waistline thet flows into a gentle skirt",
+      "A convenient back zipper makes getting dressed a breeze.",
+      "Custom Measurements & Styling Available",
+      "Available in Ages 2–12 Years",
+      "Ideal for casual daywear,birthday parties or outdoor spring and summer events"
     ],
-    "customizable": false,
+    "styleTips": "Pair this charming frock with neutral ballet flats and c cozy cream cardigan for perfect,timeless look.Using the matching scrunchie or a simple velvet bow will complete this sweet,vintage-inspired endemble.",
+    "customizable": true,
     "inStock": true,
     "featured": false
-  }
+  },
+  {
+    "id": "kf006",
+    "title": "Enchanting Grey Raw Silk Frock",
+    "category": "Kids Frocks",
+    "price": "₹ 2,499",
+    "description": "Timeless Elegance for your little one..",
+    "images": [
+      "/images/kids-frocks/kf006-1.webp"
+    ],
+    "details": [
+      "Elevate your child's wardrobe with this sophisticated and charming frock crafted from raw silk",
+      "The soft,muted grey base provides a versatile and elegant foundation",
+      "Beautiful black accents on the bodice and hemline feature delicate,shimmering embelishments that add a touch of sparkle",
+      "Features a neat,center-back zipper closure for easy dressing",
+      "Designed with care,this dress is as comfortable as it is stylish,making it an ideal choice for celebrations,family gatherings,or special ocassions",
+      "This frock is a stunning fusion of traditional texture and contemporary design-a must have piece for any stylish young wardrobe",
+      "Ideal for casual daywear,birthday parties or outdoor spring and summer events",
+      "Custom Measurements & Styling Available",
+      "Available in Ages 2–12 Years"
+    ],
+    "styleTips": "Pair this frock with classic black ballet flats and a simple matching hair accessory to complement the black accents",
+    "customizable": true,
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "kf007",
+    "title": "Regal Peacock Charm Ethnic Frock",
+    "category": "Kids Frocks",
+    "price": "₹ 2,499",
+    "description": "Elevate your little one's ethnic wardrobe with this beautifully crafted frock.",
+    "images": [
+      "/images/kids-frocks/kf007-1.webp",
+      "/images/kids-frocks/kf007-2.webp"
+    ],
+    "details": [
+      "This ensemble perfectly blends traditional charm with modern comfort,making it an ideal choice for festive occasions,weddings.",
+      "The dress features a stunning combination of a deep navy blue skirt contrasted with an intricately woven red and gold bodice and hemline",
+      "The bodice and the border of the frock are adorned with exquisite,detailed peacock motifs in rich gold,red,and navy accents,adding a touch of regal sophistication",
+      "The front is finished with a delicate gold tie-up detail,while the back features graceful bow ,adding a sweet and playful element to the overall design",
+      "Crafted with a smooth,premium-feel fabric,the dress ensures both a luxurious look and comfortable wear for your child",
+      "Available in Ages 2–12 Years",
+      "Custom Measurements & Styling Available"
+    ],
+    "styleTips": "Pair this frock with delicate gold-toned juttis or sandals and matching bangles to perfectly complement the rich navy and gold accents.Keep hair simple with a soft headband or a floral clip to highlight the elegant bow detailing on the back of the dress.",
+    "customizable": true,
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "kf008",
+    "title": "Radiant Sunset Silk Frock",
+    "category": "Kids Frocks",
+    "price": "₹ 2,499",
+    "description": "Elevate your little one's ethnic wardrobe with this radiant,traditional-inspired frock combines timeless elegance with comfartable design",
+    "images": [
+      "/images/kids-frocks/kf008-1.webp"
+    ],
+    "details": [
+      "Crafted from a rich,lustrous raw silk fabric in a stunning sunset-orange hue that catches the light beautifully",
+      "Features classic puff sleeves and a flattering gathered waistline that provides a sweet,full look",
+      "The front bodice is highlighted with subtle,intricate vertical detailing and a sophisticated hemline trim,adding a touch of grace to overall design",
+      "The back includes a secure zipper closure and a matching fabric tie-bow allowing for a comfartable and adjustable fit",
+      "Available in Ages 2–12 Years",
+      "Custom Measurements & Styling Available"
+    ],
+    "styleTips": "Pairing it with metalic gold sandals or comortable ivory ballet flats,which will keep the outfit elegant ",
+    "customizable": true,
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "kf009",
+    "title": "Radiant Fuchsia Silk Brocade Pleated Frock",
+    "category": "Kids Frocks",
+    "price": "₹ 2,499",
+    "description": "Elevate your little one's wardrobe with this elegant frock which is designed to combine traditional charm with modern comfort.",
+    "images": [
+      "/images/kids-frocks/kf009-1.webp"
+    ],
+    "details": [
+      "The dress features a rich,eye-catching fuchsia hue that stands out beautifully.",
+      "The fabric is adorned with a classic gold-toned floral brocade pattern,adding a touch of sophistication and traditional flair.",
+      "The design includes structured front pleats that provide a gentle flare,ensuring both styles and ease of movement for your child.",
+      "The back includes a secure zipper closure and a matching fabric tie-bow allowing for a comfartable and adjustable fit",
+      "With a sleevless,scoop-neck design,this frock is crafted to keep your little one comfortable while looking dressed up for any event.",
+      "Custom Measurements & Styling Available",
+      "Available in Ages 2–12 Years"
+    ],
+    "styleTips": "Pair this vibrant frock with gold-toned bellies and matching bangles for a perfectly coordinated,festive ethnic look.To complete the ensemble,accessorize with a soft hair scrunchie to match the warm metallic accents of the outfit",
+    "customizable": true,
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "kf010",
+    "title": "Sage Green Festive Pleated Frock",
+    "category": "Kids Frocks",
+    "price": "₹ 2,499",
+    "description": "This delightful frock combines traditional elegance with everyday comfort,making it perfect choice for special occasions or festive celebrations",
+    "images": [
+      "/images/kids-frocks/kf010-1.webp"
+    ],
+    "details": [
+      "The frock is crafted from a soft,light green fabric adorned with a sophisticated,repeating floral-inspired motif in muted gold and subtle pink tones",
+      "The design features a classic sleevless cut with a neat,rounf neckline.",
+      "A series of crisp vertical pleats at the centre front adds texture,volume,and a graceful flow to skirt",
+      "The back includes a secure zipper closure and a matching fabric tie-bow allowing for a comfartable and adjustable fit",
+      "With a sleevless,scoop-neck design,this frock is crafted to keep your little one comfortable while looking dressed up for any event.",
+      "Custom Measurements & Styling Available",
+      "Available in Ages 2–12 Years"
+    ],
+    "styleTips": "Pair this vibrant frock with gold-toned bellies and matching bangles for a perfectly coordinated,festive ethnic look.To complete the ensemble,accessorize with a soft hair scrunchie to match the warm metallic accents of the outfit",
+    "customizable": true,
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "kf011",
+    "title": "Elegant Little Princess Frock",
+    "category": "Kids Frocks",
+    "price": "₹ 2,499",
+    "description": "This charming frock,perfectly blends traditional elegance with a modern,minimalist silhouette.",
+    "images": [
+      "/images/kids-frocks/kf011-1.webp"
+    ],
+    "details": [
+      "Features a sophisticated square neckline with a regal black and gold brocade pattern,offering a rich,textured look.",
+      "A solid,deep black flared bottom part provides a beautiful contrast to the detailed bodice,creating a playful yet polished silhouette",
+      "The front is adorned with a dainty,metallic bronze bow that adds a touch of whimsical charm",
+      "Designed with practicality and style in mind,the back features a delicate tie-up detail,ensuring a perfect,adjustable fit for your little one.",
+      "The hemline is subtly accented with delicate gole detailing,completing the ensemble with a refined finish",
+      "Custom Measurements & Styling Available",
+      "Available in Ages 2–12 Years"
+    ],
+    "styleTips": "Pair this frock with gold-toned ballerina flats or delicate sandals to beautifully complement the metallic accents on the bodice and hem.A simple gold hair accessory will perfectly tie the entire elegant look together. and matching bangles for a perfectly coordinated,festive ethnic look.To complete the ensemble,accessorize with a soft hair scrunchie to match the warm metallic accents of the outfit",
+    "customizable": true,
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "kf012",
+    "title": "Elegant Black and Gold festive Frock",
+    "category": "Kids Frocks",
+    "price": "₹ 2,499",
+    "description": "This charming piece,is a perfect blend of classic elegance and comfort for your little one.",
+    "images": [
+      "/images/kids-frocks/kf012-1.webp"
+    ],
+    "details": [
+      "A sleeveless bodice featuring a sophisticated black fabric adorned with a golden geometric print.",
+      "The front is accented with a luxurious,velvet-textured brown bow,while the back showcases a classic tie-up ribbon for an adjustable and perfect fit.",
+      "A solid black,flared skirt part that provides a lovely silhouette,finished with a subtle golden hemline detail.",
+      "Designed with practicality and style in mind,the back features a delicate tie-up detail,ensuring a perfect,adjustable fit for your little one.",
+      "The hemline is subtly accented with delicate gold detailing,completing the ensemble with a refined finish",
+      "Capturing a look that is 'Chic - Stylishly Simple' this dress balances ornate detailing with a clean,modern aesthetic.",
+      "Available in Ages 2–12 Years",
+      "Custom Measurements & Styling Available"
+    ],
+    "styleTips": "Pair this frock with gold-toned ballerina flats or delicate sandals to beautifully complement the metallic accents on the bodice and hem.A simple gold hair accessory will perfectly tie the entire elegant look together. and matching bangles for a perfectly coordinated,festive ethnic look.To complete the ensemble,accessorize with a soft hair scrunchie to match the warm metallic accents of the outfit",
+    "customizable": true,
+    "inStock": true,
+    "featured": false
+  },
+  {
+      "id": "ge001",
+      "title": "Handcrafted Brocade Envelopes",
+      "category": "Gift Envelopes",
+      "price": "₹499",
+      "description": "Elevate your gifting with our exquisite collection of handcrafted shagun envelopes,perfect for adding a touch of traditional luxury to any ocassion.",
+      "images": [
+        "/images/gift-envelopes/ge001-1.webp",
+        "/images/gift-envelopes/ge001-2.webp",
+        "/images/gift-envelopes/ge001-3.webp"
+      ],
+      "details": [
+        "These pieces blend traditional craftsmanship with a contemporary aesthetic,making them ideal choice for weddings,festivals and special celebrations.",
+        "Each envelope is crafted from high quality material featuring intricate,woven-style patterns that catch the light beautifully.",
+        "The collection boasts a stunning range of colors,including deep navy,royal blue,magenta,lime green,soft beige,and teal,ensuring there is a perfect match for every occasion.",
+        "Each piece is secured with a delicate,metallic gold string tie,adding an extra layer of elegance and charm.",
+        "Envelopes are perfectly sized to hold currency notes comfortably,making them practical yet aesthetically superior to standard gifting options.",
+        "These envelopes represent the perfect marriage of traditional craftsmanship and modern elegance,ensuring your gift leaves a lasting impression before it's even opened."
+      ],
+      "customizable": true,
+      "inStock": true,
+      "featured": true
+  },
+  {
+      "id": "ge002",
+      "title": "Handcrafted Brocade Envelopes",
+      "category": "Gift Envelopes",
+      "price": "₹499",
+      "description": "Elevate your gifting with our exquisite collection of handcrafted shagun envelopes,perfect for adding a touch of traditional luxury to any ocassion.",
+      "images": [
+        "/images/gift-envelopes/ge002-1.webp",
+        "/images/gift-envelopes/ge002-2.webp"
+      ],
+      "details": [
+        "These pieces blend timeless artisanal charm with sophisticated design.",
+        "Each envelope is finished in rich,textured brocade fabric,radiating a subtle shimmer and elegant depth.",
+        "The collection features a curated palette of colors,including a delicate silver-grey,a soft rose-pink and deep,regal teal.",
+        "The silver and pink envelopes are adorned with a fine,repeating star motif,while the teal envelope features a classic,ornate paisely pattern.",
+        "Designed for convenience and grace,each envelope is secured with a delicate gold cord,tied in a simple,elegant knot that enhancess their 'Chic,stylishly simple' asthetic",
+        "These envelopes represent the perfect marriage of traditional craftsmanship and modern elegance,ensuring your gift leaves a lasting impression before it's even opened."
+      ],
+      "customizable": true,
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "gv001",
+      "title": "Royal Blue Silk Gudhi Vastra",
+      "category": "Gudhi Vastra",
+      "price": "₹ 999",
+      "description": "Elevate your traditional celebrations with this exquisite Gudhi Vastra.",
+      "images": [
+        "/images/gudhi-vastra/gv001-1.webp",
+        "/images/gudhi-vastra/gv001-2.webp"
+      ],
+      "details": [
+        "This sophisticated piece is crafted from premium royal blue fabric,featuring rich,intricate gold jari work that catches the light with a graceful shimmer.",
+        "The deep,rehal blue hue is perfectly complemented by the opulent golden border,which showcases traditionaal motifs,adding a touch of timeless elegance to your auspicious gudi padwa setup",
+        "Perfectly styled for the gudhi ,this vastra pairs beautifully with the traditional copper pot (kalash) and fresh floral garlands(gajra),creating a complete and visually stunning display."
+      ],
+      "customizable": true,
+      "inStock": true,
+      "featured": true
+    },
+    {
+      "id": "gv002",
+      "title": "Elegant Golden Geometric Gudhi Vastra",
+      "category": "Gudhi Vastra",
+      "price": "₹ 999",
+      "description": "Enhance your Gudhi Padwa celebrations with this elegant Gudhi Vastra.",
+      "images": [
+        "/images/gudhi-vastra/gv002-1.webp",
+        "/images/gudhi-vastra/gv002-2.webp"
+      ],
+      "details": [
+        "This traditional cloth is essential for adorning your Gudhi,symbolizing prosperity and auspicious beginnings.",
+        "The Gudhi Vastra features a classic, rich golden-yellow fabric adorned with a subtle, sophisticated geometric print in shades of brown and green.",
+        "The fabric is expertly pleated, allowing it to drape gracefully over the gudhi, creating a structured and traditional silhouette.",
+        "Whether for home pooja or festive display, this cloth brings a touch of authentic Maharashtrian heritage to your decor.",
+        "Add a touch of tradition and timeless grace to your home with this beautifully crafted Gudhi Vastra."
+      ],
+      "customizable": true,
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "gv003",
+      "title": "Traditional Festive Gudhi Vastra with intricate Gold Brocade",
+      "category": "Gudhi Vastra",
+      "price": "₹ 999",
+      "description": "Exquisite, all-over gold floral and geometric self-patterned brocade work, adding texture and luster.",
+      "images": [
+        "/images/gudhi-vastra/gv003-1.webp",
+        "/images/gudhi-vastra/gv003-2.webp"
+      ],
+      "details": [
+        "Tailored with defined ,deep pleats that fan out gracefully to create a classic ,structured bell-shaped silhouette, mimicking a traditional pleated saree.",
+        "It features a fitted neckband that sits perfectly beneath the copper vessel, with a subtle cutout or placket detail.",
+        "The pleats on this specific vastra, cascade elegantly towards the ornate floor rangoli."
+      ],
+      "customizable": true,
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "gv004",
+      "title": "Handcrafted Gudhi Vastra For Your Auspicious Celebrations",
+      "category": "Gudhi Vastra",
+      "price": "₹ 999",
+      "description": "Elevate your traditional celebrations with this exquisite Gudhi Vastra.",
+      "images": [
+        "/images/gudhi-vastra/gv004-1.webp"
+      ],
+      "details": [
+        "Designed to bring a touch of traditional elegance to your home ,this piece is the perfect accompaniment for your Gudhi Padwa celebrations.",
+        "The vastra features a deep ,sophisticated teal fabric adorned with a subtle ,shimmering diamond-patterned weave.",
+        "Finished with a classic gold border.it exudes a timeless charm that is 'Chic Stylishly Simple'.",
+        "This piece is crafted to drape beautifully over the traditional gudhi ,serving as the centerpiece for the auspicious occasion.",
+        "Whether you are looking to honor heritage or simply add a touch of grace to your festive setup, this Gudhi Vastra brings warmth and authenticity to your space."
+      ],
+      "customizable": true,
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "gv005",
+      "title": "The Chic Gudhi Vastra Collection",
+      "category": "Gudhi Vastra",
+      "price": "₹ 999",
+      "description": "Elevate your traditional celebrations with this exquisite Gudhi Vastra.",
+      "images": [
+        "/images/gudhi-vastra/gv005-1.webp"
+      ],
+      "details": [
+        "This elegant Gudhi Vastra is a beautiful representation of traditional Maharashtrian culture and the spirit of Gudhi Padwa.",
+        "The gudhi is adorned with a rich, deep blue fabric featuring a sophisticated gold-patterned border, creating a striking and festive aesthetic.",
+        "This piece serves as an ideal centerpiece for celebrating prosperity, auspicious beginnings, and cultural heritage."
+      ],
+      "customizable": true,
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "gv006",
+      "title": "Elegance In Every Drape",
+      "category": "Gudhi Vastra",
+      "price": "₹ 999",
+      "description": "Elevate your traditional celebrations with this exquisite Gudhi Vastra.",
+      "images": [
+        "/images/gudhi-vastra/gv006-1.webp",
+        "/images/gudhi-vastra/gv006-2.webp",
+        "/images/gudhi-vastra/gv006-3.webp"
+      ],
+      "details": [
+        "The deep, earthy red hue of the fabric creates a sophisticated and warm focal point for your Gudhi Padwa setup.",
+        "Featuring a classic gold border, the textile adds a refined shimmer that captures the light and elevates the overall presentation.",
+        "The minimalist yet elegant drape makes it a versatile addition to your festive decor, embodying a 'Chic - Stylishly Simple 'aesthetic.",
+        "Bring home this essential piece of tradition and celebrate with unmatched style and devotion."
+      ],
+      "customizable": true,
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "gv007",
+      "title": "Royal Purple Silk Gudhi Vastra",
+      "category": "Gudhi Vastra",
+      "price": "₹ 999",
+      "description": "Elevate your traditional celebrations with this exquisite Gudhi Vastra.",
+      "images": [
+        "/images/gudhi-vastra/gv007-1.webp",
+        "/images/gudhi-vastra/gv007-2.webp"
+      ],
+      "details": [
+        "Designed to adorn the traditional Gudhi, this piece brings an aura of regal sophistication to your festivities.",
+        "The vibrant royal purple hue radiates opulence, making it striking centerpiece for your Gudhi Padwa celebrations.",
+        "The fabric features delicate, golden Zari border work that captures the light beautifully, adding a touch of traditional luxury.",
+        "This Gudhi Vastra is more than just a decorative cloth; it is celebrations of heritage ,designed to elevate the spiritual and aesthetic significance of your home during the New Year."
+      ],
+      "customizable": true,
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "ke001",
+      "title": "Playful Patterned Fabric Storage Envelopes",
+      "category": "Kids Envelopes",
+      "price": "₹499",
+      "description": "Keep your little one's workspace clutter-free and vibrant with these charming multipurpose envelopes.",
+      "images": [
+        "/images/kids-envelopes/ke001-1.webp"
+      ],
+      "details": [
+        "Bring a touch joy and organization to your desk with our vibrant, handcrafted fabric envelopes.",
+        "These durable envelopes are designed to keep your child's art supplies ,stationery, or small treasures neatly stored and easily accessible.",
+        "A collection of fun, colorful prints including playful animals and classic patterns that spark creativity.",
+        "Equipped with a reliable hook and loop fastener on the fold-over flap to ensure contents stay securely inside.",
+        "Perfectly proportioned for everyday items such as rulers, crayons ,and craft tools, making them the ultimate companion for home, school or travel.",
+        "Thoughtfully constructed with sturdy fabric and clean stitching to withstand daily use.",
+        "Whether you are looking to declutter a workspace or add a pop of color to a school bag, these envelopes are as functional as they are charming."
+      ],
+      "customizable": true,
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "ke002",
+      "title": "Whimsical envelopes for stationery and crafts",
+      "category": "Kids Envelopes",
+      "price": "₹499",
+      "description": "Add a touch of whimsy and organization to your little one's belongings with our multipurpose kids envelope.",
+      "images": [
+        "/images/kids-envelopes/ke002-1.webp"
+      ],
+      "details": [
+        "These charming fabric clutches are designed to be as durable as they are adorable, making them the perfect solution for keeping toys, stationery or small treasures neatly tucked away.",
+        "This set features two vibrant styles-one adorned with a cheerful white bear and red polka dot pattern, and another with a fun, multi-colored character print on a light blue background.",
+        "Whether for school supplies, art materials or small trinkets, these clutches offer a stylish way to stay organised.",
+        "Crafted with high-quality fabric, these  envelopes are built to withstand the daily adventures of childhood.",
+        "With bright colors and friendly characters, these envelopes are sure to become favorite for children of all ages.",
+        "Bring home this delightful set today and make organization a playful part of your child's day!"
+      ],
+      "customizable": true,
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "coaster001",
+      "title": "Festive Hand Painted Canvas Coasters",
+      "category": "Coasters",
+      "price": "₹499",
+      "description": "Vibrant, glowing Christmas tree set against a starry night sky and a white picket fence.",
+      "images": [
+        "/images/coaster/coaster001-1.webp"
+      ],
+      "details": [
+        "Bring a touch of holiday magic to your home with these charming, hand-painted canvas coasters.",
+        "Perfect for adding a festive flair to your coffee table or holiday gatherings, combining functionality with beautiful, seasonal artistry.",
+        "Each set features delightful, hand-painted designs that capture the spirit of the season.",
+        "Offers a unique, artisanal look that stands out from standard drinkware accessories.",
+        "Provides a high-quality, textured appearance that looks just like tiny works of art."
+      ],
+      "customizable": true,
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "coaster002",
+      "title": "Scenic Hand-Painted Coasters",
+      "category": "Coasters",
+      "price": "₹499",
+      "description": "Vibrant tropical sunset scene, complete with palm trees and a small boat drifting on the water.",
+      "images": [
+        "/images/coaster/coaster002-1.webp"
+      ],
+      "details": [
+        "Transport your space to serene destinations with these beautiful, hand-painted canvas coasters.",
+        "Each coaster features a distinct, meticulously painted landscape that captures the beauty of the outdoors.",
+        "Ideal for art lovers, travel enthusiasts, or anyone looking to add a touch of color and relaxation to their home, these coasters make for a thoughtful and memorable gift.",
+        "Enhance your home environment with these evocative ,hand-painted coasters that turn every drink into a moment of scenic appreciation."
+      ],
+      "customizable": true,
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "coaster003",
+      "title": "Coastal Escape Hand Painted Canvas Coasters",
+      "category": "Coasters",
+      "price": "₹499",
+      "description": "Romantic tropical evening view, showing silhouettes of palm trees and a hammock under glowing lights.",
+      "images": [
+        "/images/coaster/coaster003-1.webp"
+      ],
+      "details": [
+        "Invite the warmth of the coast into your home with these evocative hand-painted canvas coasters.",
+        "Each coaster features a distinct, meticulously painted scene that captures the tranquility of the ocean.",
+        "Unique, artisan-crafted piece perfectly blend functional tabletop protection with a relaxing vacation-inspired aesthetic.",
+        "Offers a premium, handcrafted appeal that serves as a beautiful conversation piece for any room.",
+        "Miniature canvas provides textured, gallery like quality that elevates your decor beyond standard drinkware accessories."
+      ],
+      "customizable": true,
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "rakhi001",
+      "title": "Handcrafted Kundan Rakhi Collection",
+      "category": "Rakhi",
+      "price": "₹499",
+      "description": "Elevate your Raksha Bandhan celebrations with our stunning collection of handcrafted Kundan rakhis.",
+      "images": [
+        "/images/rakhi/rakhi001-1.webp",
+        "/images/rakhi/rakhi001-2.webp"
+      ],
+      "details": [
+        "Vibrant, artisanal pieces are designed to bring a touch of traditional elegance and modern flair to your festivities",
+        "Features a brilliant floral design, meticulously detailed with a central cluster of miniature pearls surrounded by a halo of radiant, gemstone-colored petals.",
+        "Offers a spectrum of eye-catching hues, including deep red, brilliant blue, soft pink, royal purple, and sunny yellow, ensuring a perfect match for every brother's style.",
+        "Finished with shimmering golden bead accents, adding a luxurious touch to the intricate centerpieces.",
+        "Celebrate the bond of protection and affection with these exquisite 'Festive Hues', handcrafted with love to make your Rakhi ceremony truly memorable."
+      ],
+      "customizable": true,
+      "inStock": true,
+      "featured": false
+    },
+    {
+      "id": "rakhi002",
+      "title": "The Hand-Knitted Rakhi Series",
+      "category": "Rakhi",
+      "price": "₹499",
+      "description": "Celebrate the bond of love with our charming collection of handmade crochet rakhis.",
+      "images": [
+        "/images/rakhi/rakhi002-1.webp"
+      ],
+      "details": [
+        "Unique, artisanal pieces blend traditional significance with modern, playful aesthetics, making them a perfect choice for the festive season.",
+        "Features a vibrant, dual-toned spiral crochet motif that creates a playful and eye-catching focal point.",
+        "Center of each spiral is adorned with a delicate pearl or a sparkling gemstone, adding a touch of elegance to the handcrafted yarn work.",
+        "Made from soft colorful threads, ensuring they are comfortable to wear while offering a cheerful pop of color.",
+        "Threads are accented with alternating pearls and metallic golden beads, providing a balanced, sophisticated finish.",
+        "Designed to pair perfectly with traditional rituals, adding a heartfelt, handcrafted touch to your Raksha Bandhan celebrations"
+      ],
+      "customizable": true,
+      "inStock": true,
+      "featured": false
+    }
 ]

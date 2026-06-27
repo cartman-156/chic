@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { X } from 'lucide-react';
 
 export default function ProductCard({ product, settings }) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -23,26 +23,10 @@ export default function ProductCard({ product, settings }) {
 
     const interval = setInterval(() => {
       setActiveImageIndex((prev) => (prev + 1) % product.images.length);
-    }, 4200); // softer pacing
+    }, 4200);
 
     return () => clearInterval(interval);
   }, [product.images]);
-
-  const nextImage = (e) => {
-    e.stopPropagation();
-    if (product.images?.length > 0) {
-      setActiveImageIndex((prev) => (prev + 1) % product.images.length);
-    }
-  };
-
-  const prevImage = (e) => {
-    e.stopPropagation();
-    if (product.images?.length > 0) {
-      setActiveImageIndex(
-        (prev) => (prev - 1 + product.images.length) % product.images.length
-      );
-    }
-  };
 
   const formatWhatsAppLink = () => {
     const number = settings?.whatsappNumber || '919999999999';
@@ -79,18 +63,17 @@ Price: ${product.price}`;
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{
           duration: 0.8,
-          ease: [0.25, 1, 0.5, 1] // luxury easing
+          ease: [0.25, 1, 0.5, 1]
         }}
       >
-
         {/* IMAGE */}
         <div className="aspect-[4/5] overflow-hidden bg-[#F6F4EF] relative">
-
           <motion.img
             key={activeImageIndex}
             src={getProductImage(activeImageIndex)}
             alt={product.title}
-            className="w-full h-full object-cover"
+            // className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
             animate={{
               scale: showOverlay ? 1.03 : 1
             }}
@@ -122,7 +105,7 @@ Price: ${product.price}`;
             </div>
           )}
 
-          {/* TITLE OVERLAY (soft + mobile-safe behavior) */}
+          {/* TITLE OVERLAY */}
           <motion.div
             className="absolute inset-0 flex items-center justify-center bg-black/10"
             initial={false}
@@ -138,10 +121,9 @@ Price: ${product.price}`;
               {product.title}
             </h3>
           </motion.div>
-
         </div>
 
-        {/* BASE INFO (never fully disappears on mobile) */}
+        {/* BASE INFO */}
         <motion.div
           className="mt-3 space-y-1"
           animate={{
@@ -156,6 +138,7 @@ Price: ${product.price}`;
             <h3 className="text-sm font-light text-black/80">
               {product.title}
             </h3>
+
             <span className="text-xs text-black/50">
               {product.price}
             </span>
@@ -165,14 +148,12 @@ Price: ${product.price}`;
             {product.category}
           </p>
         </motion.div>
-
       </motion.div>
 
-      {/* MODAL (unchanged but softened transitions) */}
+      {/* MODAL */}
       <AnimatePresence>
         {isExpanded && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-3 md:p-6">
-
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -189,9 +170,8 @@ Price: ${product.price}`;
                 duration: 0.6,
                 ease: [0.25, 1, 0.5, 1]
               }}
-              className="relative w-full max-w-5xl bg-white flex flex-col md:flex-row overflow-hidden"
+              className="relative w-full max-w-5xl max-h-[90vh] bg-white flex flex-col md:flex-row overflow-hidden"
             >
-
               <button
                 onClick={() => setIsExpanded(false)}
                 className="absolute top-4 right-4 z-10 text-black/60"
@@ -202,33 +182,66 @@ Price: ${product.price}`;
               <div className="w-full md:w-1/2 aspect-[4/5] bg-[#F6F4EF] relative">
                 <img
                   src={getProductImage(activeImageIndex)}
-                  className="w-full h-full object-cover"
+                  alt={product.title}
+                  // className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
 
-              <div className="w-full md:w-1/2 p-8 space-y-6">
+              <div className="w-full md:w-1/2 p-8 overflow-y-auto">
+                <div className="space-y-6">
+                  <div>
+                    <h2 className="text-xl font-light">
+                      {product.title}
+                    </h2>
 
-                <div>
-                  <h2 className="text-xl font-light">{product.title}</h2>
-                  <p className="text-sm text-black/60 mt-1">{product.price}</p>
-                  <p className="text-[10px] tracking-widest uppercase text-black/40 mt-2">
-                    {product.category}
-                  </p>
+                    <p className="text-sm text-black/60 mt-1">
+                      {product.price}
+                    </p>
+
+                    <p className="text-[10px] tracking-widest uppercase text-black/40 mt-2">
+                      {product.category}
+                    </p>
+                  </div>
+
+                  {product.description && (
+                    <div className="bg-stone-50 border border-stone-200 px-5 py-4 rounded-sm">
+                      <p className="text-[15px] leading-7 text-black/90 font-light italic">
+                        {product.description}
+                      </p>
+                    </div>
+                  )}
+
+                  {product.details?.length > 0 && (
+                    <div>
+                      <h3 className="text-[11px] uppercase tracking-[0.25em] text-black/40 mb-4">
+                        Product Details
+                      </h3>
+
+                      <div className="space-y-3">
+                        {product.details.map((detail, index) => (
+                          <div
+                            key={index}
+                            className="flex items-start gap-3 text-sm text-black/70 leading-6"
+                          >
+                            <span className="mt-2 h-1.5 w-1.5 rounded-full bg-black/40 shrink-0" />
+                            <span>{detail}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  <button
+                    onClick={() =>
+                      window.open(formatWhatsAppLink(), '_blank')
+                    }
+                    className="w-full border border-black/10 py-3 text-xs uppercase tracking-widest hover:bg-black hover:text-white transition"
+                  >
+                    Enquire
+                  </button>
                 </div>
-
-                <p className="text-sm text-black/60 leading-relaxed">
-                  {product.description}
-                </p>
-
-                <button
-                  onClick={() => window.open(formatWhatsAppLink(), '_blank')}
-                  className="w-full border border-black/10 py-3 text-xs uppercase tracking-widest hover:bg-black hover:text-white transition"
-                >
-                  Enquire
-                </button>
-
               </div>
-
             </motion.div>
           </div>
         )}

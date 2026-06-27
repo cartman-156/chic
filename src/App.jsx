@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import Featured from './sections/Featured';
 import ProductGrid from './components/ProductGrid';
-import InstagramPreview from './sections/InstagramPreview';
+// import InstagramPreview from './sections/InstagramPreview';
 import Contact from './sections/Contact';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
@@ -16,7 +16,7 @@ export default function App() {
   return (
     <div className="bg-[#FCFBF9] min-h-screen text-[#121212] selection:bg-[#E9E2D2]">
       {/* Dynamic Header */}
-      <Navbar />
+      <Navbar settings={settings}/>
 
       {/* Hero Intro */}
       <Hero />
@@ -28,7 +28,7 @@ export default function App() {
       <ProductGrid products={products} settings={settings} />
 
       {/* Curated Social Feed */}
-      <InstagramPreview settings={settings} />
+      {/* <InstagramPreview settings={settings} /> */}
 
       {/* Direct Inquiries & Map */}
       <Contact settings={settings} />

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 
-export default function Navbar() {
+export default function Navbar({ settings }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -27,7 +27,7 @@ export default function Navbar() {
   const navItems = [
     { name: 'Collections', href: '#collections' },
     { name: 'Showcase', href: '#showcase' },
-    { name: 'Instagram', href: '#instagram' },
+    { name: 'Instagram', href: settings?.instagramUrl || '#instagram' },
     { name: 'Inquire', href: '#contact' }
   ];
 
@@ -59,16 +59,20 @@ export default function Navbar() {
 
           {/* DESKTOP NAV */}
           <div className="hidden md:flex items-center gap-10">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-xs tracking-widest uppercase font-light text-luxury-black/80 hover:text-luxury-gold transition-colors"
-              >
-                {item.name}
-              </a>
-            ))}
-
+            {navItems.map((item) => {
+              const isExternal = item.href?.startsWith("http");
+              return (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  className="text-xs tracking-widest uppercase font-light text-luxury-black/80 hover:text-luxury-gold transition-colors"
+                >
+                  {item.name}
+                </a>
+              );
+            })}
             <a
               href="#contact"
               className="flex items-center gap-2 text-xs tracking-widest uppercase font-light bg-luxury-charcoal text-luxury-ivory px-5 py-2.5 hover:bg-luxury-gold transition-all"
@@ -117,16 +121,22 @@ export default function Navbar() {
           </button>
 
           {/* LINKS */}
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              onClick={() => setIsOpen(false)}
-              className="text-xl tracking-[0.25em] uppercase font-serif font-light text-luxury-black hover:text-luxury-gold transition-colors"
-            >
-              {item.name}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const isExternal = item.href?.startsWith('http');
+
+            return (
+              <a
+                key={item.name}
+                href={item.href}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                onClick={() => setIsOpen(false)}
+                className="text-xl tracking-[0.25em] uppercase font-serif font-light text-luxury-black hover:text-luxury-gold transition-colors"
+              >
+                {item.name}
+              </a>
+            );
+          })}
 
           {/* CTA */}
           <a
