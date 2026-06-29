@@ -3,7 +3,7 @@
     "id": "kf001",
     "title": "Vintage -inspired floral cotton frock",
     "category": "Kids Frocks",
-    "price": "₹ 999",
+    "price": "₹ 750",
     "description": "Brighten up your little one's wardrobe with this charming vintage-inspired floral cotton frock.",
     "images": [
       "/images/kids-frocks/kf001-1.webp",
@@ -26,7 +26,7 @@
     "id": "kf002",
     "title": "Charming Daisy Flutter-sleeve cotton frock",
     "category": "Kids Frocks",
-    "price": "₹ 2,499",
+    "price": "₹ 550",
     "description": "Dress your little one in effortless charm and comfort with our Delightful Daisy Cotton Frock",
     "images": [
       "/images/kids-frocks/kf002-1.webp"
@@ -50,7 +50,7 @@
     "id": "kf003",
     "title": "Elegant Magenta Paisely frock with ruffled sleeves",
     "category": "Kids Frocks",
-    "price": "₹ 2,499",
+    "price": "₹ 550",
     "description": "Dress your litle one in timeless elegnce with this intricate,traiditional paisely print frock",
     "images": [
       "/images/kids-frocks/kf003-1.webp",
@@ -76,7 +76,7 @@
     "id": "tf001",
     "title": "Champagne Silk Gala Dress",
     "category": "Teenager Frocks",
-    "price": "₹4,899",
+    "price": "₹ 750",
     "description": "A sophisticated party gown crafted from luxurious silk. Features a flowy silhouette with subtle champagne and ivory hues.",
     "images": [
       "/images/teen-frocks/tf001-1.webp",
@@ -97,7 +97,7 @@
     "id": "kf004",
     "title": "Enchantin Floral Cotton Frock",
     "category": "Kids Frocks",
-    "price": "₹ 2,499",
+    "price": "₹ 499",
     "description": "Bring a splash of color to her wardrobe with this charming,lightweight cotton frock.",
     "images": [
       "/images/kids-frocks/kf004-1.webp"
@@ -120,7 +120,7 @@
     "id": "kf005",
     "title": "The 'Vintage Meadow' Cotton Frock",
     "category": "Kids Frocks",
-    "price": "₹ 2,499",
+    "price": "₹ 650",
     "description": "Add a touch of vintage charm to your little one's wardrobe with this delightful cotton frock.",
     "images": [
       "/images/kids-frocks/kf005-1.webp"
@@ -143,7 +143,7 @@
     "id": "kf006",
     "title": "Enchanting Grey Raw Silk Frock",
     "category": "Kids Frocks",
-    "price": "₹ 2,499",
+    "price": "₹ 350",
     "description": "Timeless Elegance for your little one..",
     "images": [
       "/images/kids-frocks/kf006-1.webp"
@@ -168,7 +168,7 @@
     "id": "kf007",
     "title": "Regal Peacock Charm Ethnic Frock",
     "category": "Kids Frocks",
-    "price": "₹ 2,499",
+    "price": "₹ 499",
     "description": "Elevate your little one's ethnic wardrobe with this beautifully crafted frock.",
     "images": [
       "/images/kids-frocks/kf007-1.webp",
@@ -192,7 +192,7 @@
     "id": "kf008",
     "title": "Radiant Sunset Silk Frock",
     "category": "Kids Frocks",
-    "price": "₹ 2,499",
+    "price": "₹ 499",
     "description": "Elevate your little one's ethnic wardrobe with this radiant,traditional-inspired frock combines timeless elegance with comfartable design",
     "images": [
       "/images/kids-frocks/kf008-1.webp"
@@ -214,7 +214,7 @@
     "id": "kf009",
     "title": "Radiant Fuchsia Silk Brocade Pleated Frock",
     "category": "Kids Frocks",
-    "price": "₹ 2,499",
+    "price": "₹ 650",
     "description": "Elevate your little one's wardrobe with this elegant frock which is designed to combine traditional charm with modern comfort.",
     "images": [
       "/images/kids-frocks/kf009-1.webp"
@@ -237,7 +237,7 @@
     "id": "kf010",
     "title": "Sage Green Festive Pleated Frock",
     "category": "Kids Frocks",
-    "price": "₹ 2,499",
+    "price": "₹ 650",
     "description": "This delightful frock combines traditional elegance with everyday comfort,making it perfect choice for special occasions or festive celebrations",
     "images": [
       "/images/kids-frocks/kf010-1.webp"
@@ -260,7 +260,7 @@
     "id": "kf011",
     "title": "Elegant Little Princess Frock",
     "category": "Kids Frocks",
-    "price": "₹ 2,499",
+    "price": "₹ 575",
     "description": "This charming frock,perfectly blends traditional elegance with a modern,minimalist silhouette.",
     "images": [
       "/images/kids-frocks/kf011-1.webp"
@@ -283,7 +283,7 @@
     "id": "kf012",
     "title": "Elegant Black and Gold festive Frock",
     "category": "Kids Frocks",
-    "price": "₹ 2,499",
+    "price": "₹ 575",
     "description": "This charming piece,is a perfect blend of classic elegance and comfort for your little one.",
     "images": [
       "/images/kids-frocks/kf012-1.webp"
@@ -307,7 +307,7 @@
       "id": "ge001",
       "title": "Handcrafted Brocade Envelopes",
       "category": "Gift Envelopes",
-      "price": "₹499",
+      "price": "₹ 75/pc",
       "description": "Elevate your gifting with our exquisite collection of handcrafted shagun envelopes,perfect for adding a touch of traditional luxury to any ocassion.",
       "images": [
         "/images/gift-envelopes/ge001-1.webp",
@@ -330,7 +330,7 @@
       "id": "ge002",
       "title": "Handcrafted Brocade Envelopes",
       "category": "Gift Envelopes",
-      "price": "₹499",
+      "price": "₹ 75/pc",
       "description": "Elevate your gifting with our exquisite collection of handcrafted shagun envelopes,perfect for adding a touch of traditional luxury to any ocassion.",
       "images": [
         "/images/gift-envelopes/ge002-1.webp",
@@ -352,7 +352,7 @@
       "id": "gv001",
       "title": "Royal Blue Silk Gudhi Vastra",
       "category": "Gudhi Vastra",
-      "price": "₹ 999",
+      "price": "₹ 299",
       "description": "Elevate your traditional celebrations with this exquisite Gudhi Vastra.",
       "images": [
         "/images/gudhi-vastra/gv001-1.webp",
@@ -371,7 +371,7 @@
       "id": "gv002",
       "title": "Elegant Golden Geometric Gudhi Vastra",
       "category": "Gudhi Vastra",
-      "price": "₹ 999",
+      "price": "₹ 299",
       "description": "Enhance your Gudhi Padwa celebrations with this elegant Gudhi Vastra.",
       "images": [
         "/images/gudhi-vastra/gv002-1.webp",
@@ -390,9 +390,9 @@
     },
     {
       "id": "gv003",
-      "title": "Traditional Festive Gudhi Vastra with intricate Gold Brocade",
+      "title": "Traditional Gudhi Vastra with intricate Gold Brocade",
       "category": "Gudhi Vastra",
-      "price": "₹ 999",
+      "price": "₹ 299",
       "description": "Exquisite, all-over gold floral and geometric self-patterned brocade work, adding texture and luster.",
       "images": [
         "/images/gudhi-vastra/gv003-1.webp",
@@ -409,9 +409,9 @@
     },
     {
       "id": "gv004",
-      "title": "Handcrafted Gudhi Vastra For Your Auspicious Celebrations",
+      "title": "Handcrafted Gudhi Vastra For Auspicious Celebrations",
       "category": "Gudhi Vastra",
-      "price": "₹ 999",
+      "price": "₹ 299",
       "description": "Elevate your traditional celebrations with this exquisite Gudhi Vastra.",
       "images": [
         "/images/gudhi-vastra/gv004-1.webp"
@@ -431,7 +431,7 @@
       "id": "gv005",
       "title": "The Chic Gudhi Vastra Collection",
       "category": "Gudhi Vastra",
-      "price": "₹ 999",
+      "price": "₹ 299",
       "description": "Elevate your traditional celebrations with this exquisite Gudhi Vastra.",
       "images": [
         "/images/gudhi-vastra/gv005-1.webp"
@@ -449,7 +449,7 @@
       "id": "gv006",
       "title": "Elegance In Every Drape",
       "category": "Gudhi Vastra",
-      "price": "₹ 999",
+      "price": "₹ 299",
       "description": "Elevate your traditional celebrations with this exquisite Gudhi Vastra.",
       "images": [
         "/images/gudhi-vastra/gv006-1.webp",
@@ -470,7 +470,7 @@
       "id": "gv007",
       "title": "Royal Purple Silk Gudhi Vastra",
       "category": "Gudhi Vastra",
-      "price": "₹ 999",
+      "price": "₹ 299",
       "description": "Elevate your traditional celebrations with this exquisite Gudhi Vastra.",
       "images": [
         "/images/gudhi-vastra/gv007-1.webp",
@@ -490,7 +490,7 @@
       "id": "ke001",
       "title": "Playful Patterned Fabric Storage Envelopes",
       "category": "Kids Envelopes",
-      "price": "₹499",
+      "price": "₹ 250/pc",
       "description": "Keep your little one's workspace clutter-free and vibrant with these charming multipurpose envelopes.",
       "images": [
         "/images/kids-envelopes/ke001-1.webp"
@@ -512,7 +512,7 @@
       "id": "ke002",
       "title": "Whimsical envelopes for stationery and crafts",
       "category": "Kids Envelopes",
-      "price": "₹499",
+      "price": "₹ 250/pc",
       "description": "Add a touch of whimsy and organization to your little one's belongings with our multipurpose kids envelope.",
       "images": [
         "/images/kids-envelopes/ke002-1.webp"
@@ -533,7 +533,7 @@
       "id": "coaster001",
       "title": "Festive Hand Painted Canvas Coasters",
       "category": "Coasters",
-      "price": "₹499",
+      "price": "₹ 499",
       "description": "Vibrant, glowing Christmas tree set against a starry night sky and a white picket fence.",
       "images": [
         "/images/coaster/coaster001-1.webp"
@@ -553,7 +553,7 @@
       "id": "coaster002",
       "title": "Scenic Hand-Painted Coasters",
       "category": "Coasters",
-      "price": "₹499",
+      "price": "₹ 499",
       "description": "Vibrant tropical sunset scene, complete with palm trees and a small boat drifting on the water.",
       "images": [
         "/images/coaster/coaster002-1.webp"
@@ -572,7 +572,7 @@
       "id": "coaster003",
       "title": "Coastal Escape Hand Painted Canvas Coasters",
       "category": "Coasters",
-      "price": "₹499",
+      "price": "₹ 499",
       "description": "Romantic tropical evening view, showing silhouettes of palm trees and a hammock under glowing lights.",
       "images": [
         "/images/coaster/coaster003-1.webp"
@@ -592,7 +592,7 @@
       "id": "rakhi001",
       "title": "Handcrafted Kundan Rakhi Collection",
       "category": "Rakhi",
-      "price": "₹499",
+      "price": "₹ 50/pc",
       "description": "Elevate your Raksha Bandhan celebrations with our stunning collection of handcrafted Kundan rakhis.",
       "images": [
         "/images/rakhi/rakhi001-1.webp",
@@ -613,7 +613,7 @@
       "id": "rakhi002",
       "title": "The Hand-Knitted Rakhi Series",
       "category": "Rakhi",
-      "price": "₹499",
+      "price": "₹ 75/pc",
       "description": "Celebrate the bond of love with our charming collection of handmade crochet rakhis.",
       "images": [
         "/images/rakhi/rakhi002-1.webp"
