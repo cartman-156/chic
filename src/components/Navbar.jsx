@@ -52,7 +52,7 @@ export default function Navbar({ settings }) {
             <span className="text-2xl md:text-3xl font-serif font-light tracking-[0.25em] text-luxury-black uppercase">
               Chic
             </span>
-            <span className="text-[9px] tracking-[0.35em] text-luxury-muted uppercase mt-1">
+            <span className="text-[9px] tracking-[0.35em] text-luxury-black uppercase mt-1">
               Stylishly Simple
             </span>
           </a>
